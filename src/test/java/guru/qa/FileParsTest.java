@@ -19,7 +19,7 @@ import static com.codeborne.selenide.Selenide.open;
 public class FileParsTest {
     ClassLoader cl = FileParsTest.class.getClassLoader();//конструкция для хождения в ресурсы за файлами
     //classloader загружает классы и ищет файлы в папке resources ищет их по classpath - это src\test\java и resources
-    //возваращет ответа в виде inputstream
+    //возваращет ответ в виде inputstream
     //inputstream - побайтовое чтение файлов, reader - посимвольное чтение файлов
     @Test
     void pdfTest() throws Exception{
@@ -63,7 +63,7 @@ public class FileParsTest {
                 assertThat(jsonObject.get("isGoodTeacher").getAsBoolean()).isTrue();
                 assertThat(jsonObject.get("passport").getAsJsonObject().get("number").getAsInt()).isEqualTo(1234567);
             }
-    @Test//тест с моделю в классе "teacher"
+    @Test//тест с моделью в классе "teacher"
     void jsonTestWithModel(){
         InputStream is = cl.getResourceAsStream("folder/Teacher.json");
         Gson gson = new Gson();
