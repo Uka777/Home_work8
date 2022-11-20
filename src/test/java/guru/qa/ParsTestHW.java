@@ -3,6 +3,7 @@ import com.codeborne.pdftest.PDF;
 import com.codeborne.xlstest.XLS;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.opencsv.CSVReader;
+import guru.qa.model.Analyzes;
 import org.junit.jupiter.api.Test;
 import java.io.File;
 import java.io.InputStream;
@@ -75,12 +76,11 @@ public class ParsTestHW {
         try (InputStream is = cl.getResourceAsStream("folder/Analyzes.json")) {
             ObjectMapper objectMapper = new ObjectMapper();
             Analyzes analyzes = objectMapper.readValue(is, Analyzes.class);
-            assertThat(analyzes.name).isEqualTo("Veta");
+            assertThat(analyzes.name).isEqualTo("blood biochemistry");
             assertThat(analyzes.referenceValues).isEqualTo(120);
-            assertThat(analyzes.isStudent).isEqualTo(true);
-            assertThat(analyzes.subjects[1]).isEqualTo("Art");
-            assertThat(analyzes.studentID.get("number")).isEqualTo("123456");
-
+            assertThat(analyzes.isaAnalyzes).isEqualTo(true);
+            assertThat(analyzes.measurement.get(0)).isEqualTo("mmol");
+            assertThat(analyzes.id.sequenceNumber).isEqualTo(99);
         }
     }
 }

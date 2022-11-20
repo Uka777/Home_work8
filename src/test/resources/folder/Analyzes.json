@@ -2,8 +2,8 @@
   "name": "blood biochemistry",
   "referenceValues": 120,
   "isaAnalyzes": true,
-  "Measurement": ["mmol","mol"],
-  "passport": {
+  "measurement": ["mmol","mol"],
+  "id": {
     "sequenceNumber": 99,
     "dateEvent":"20.11.2022"
   }
