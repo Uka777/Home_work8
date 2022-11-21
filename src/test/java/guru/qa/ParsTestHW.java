@@ -32,9 +32,9 @@ public class ParsTestHW {
                     assertThat(row[0]).isEqualTo("unit of measurement");
                 }
             }
-        }
-    }
 
+
+/*
     @Test
     void zipXls() throws Exception {
         InputStream is = cl.getResourceAsStream("folder/HW.zip");
@@ -83,11 +83,11 @@ public class ParsTestHW {
             assertThat(analyzes.id.sequenceNumber).isEqualTo(99);
         }
     }
-}
+}*/
 
 
 
-                /*if (entryName.contains("OAK.xlsx")) {
+                if (entryName.contains("OAK.xlsx")) {
                     try (InputStream inputStream = zipFile.getInputStream(entry)) {
                     XLS xls = new XLS(inputStream);
                     assertThat(xls.excel.getSheetAt(0)
@@ -104,4 +104,4 @@ public class ParsTestHW {
             }
         }
     }
-}*/
+}
