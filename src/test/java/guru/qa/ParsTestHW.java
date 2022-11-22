@@ -15,7 +15,6 @@ import java.util.zip.ZipInputStream;
 import static org.assertj.core.api.Assertions.assertThat;
 public class ParsTestHW {
     ClassLoader cl = FileParsTest.class.getClassLoader();
-
     @Test
     void zipTest() throws Exception {
         InputStream is = cl.getResourceAsStream("folder/HW.zip");
@@ -32,9 +31,8 @@ public class ParsTestHW {
                     assertThat(row[0]).isEqualTo("unit of measurement");
                 }
             }
-
-
-/*
+        }
+    }
     @Test
     void zipXls() throws Exception {
         InputStream is = cl.getResourceAsStream("folder/HW.zip");
@@ -54,7 +52,6 @@ public class ParsTestHW {
             }
         }
     }
-
     @Test
     void zipPdf() throws Exception {
         InputStream is = cl.getResourceAsStream("folder/HW.zip");
@@ -70,7 +67,6 @@ public class ParsTestHW {
             }
         }
     }
-
     @Test
     void jsonTest() throws Exception {
         try (InputStream is = cl.getResourceAsStream("folder/Analyzes.json")) {
@@ -83,25 +79,9 @@ public class ParsTestHW {
             assertThat(analyzes.id.sequenceNumber).isEqualTo(99);
         }
     }
-}*/
-
-
-
-                if (entryName.contains("OAK.xlsx")) {
-                    try (InputStream inputStream = zipFile.getInputStream(entry)) {
-                    XLS xls = new XLS(inputStream);
-                    assertThat(xls.excel.getSheetAt(0)
-                            .getRow(1).getCell(1)
-                            .getStringCellValue())
-                            .isEqualTo("general blood test");
-                }
-            }
-            if (entryName.contains("SOE.pdf")) {
-                try (InputStream inputStream = zipFile.getInputStream(entry)) {
-                    PDF pdf = new PDF(inputStream);
-                    assertThat(pdf.text).isEqualTo("erythrocyte sedimentation rate");
-                }
-            }
-        }
-    }
 }
+
+
+
+
+
