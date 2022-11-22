@@ -5,7 +5,12 @@
 *.properties
 
 # Package Files #
-
+*.jar
+*.war
+*.nar
+*.ear
+*.tar.gz
+*.iml
 
 # Project gen files
 .idea
